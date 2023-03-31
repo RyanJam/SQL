@@ -1,0 +1,48 @@
+/** Clothing store:
+t-shirts
+pants
+shorts
+underwear
+socks
+shoes
+jackets
+thermals
+hats
+rings
+polos
+gloves
+dresses
+suits
+ties
+**/
+
+--Create clothing store database
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, price INTEGER, stock INTEGER);
+INSERT INTO clothing_store VALUES (1, "t-shirt", 4, 5, 50);
+INSERT INTO clothing_store VALUES (2, "pants", 3, 10, 200);
+INSERT INTO clothing_store VALUES (3, "shorts", 4, 7, 25);
+INSERT INTO clothing_store VALUES (4, "underwear", 5, 10, 100);
+INSERT INTO clothing_store VALUES (5, "socks", 2, 6, 47);
+INSERT INTO clothing_store VALUES (6, "shoes", 1, 40, 20);
+INSERT INTO clothing_store VALUES (7, "jackets", 1, 50, 15);
+INSERT INTO clothing_store VALUES (8, "thermals", 5, 12, 67);
+INSERT INTO clothing_store VALUES (9, "hats", 4, 8, 75);
+INSERT INTO clothing_store VALUES (10, "rings", 3, 200, 10);
+INSERT INTO clothing_store VALUES (11, "polos", 4, 11, 50);
+INSERT INTO clothing_store VALUES (12, "gloves", 2, 9, 90);
+INSERT INTO clothing_store VALUES (13, "dresses", 5, 40, 20);
+INSERT INTO clothing_store VALUES (14, "suits", 1, 150, 13);
+INSERT INTO clothing_store VALUES (15, "ties", 2, 4, 600);
+
+--Display the database ordered by price.
+SELECT 
+price, 
+name, 
+id 
+FROM clothing_store ORDER BY price;
+
+--Display the total value of inventory.
+SELECT 
+aisle, 
+SUM (price*stock) 
+FROM clothing_store GROUP BY aisle;
